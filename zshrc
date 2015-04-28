@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/home/darckjack/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -49,7 +49,7 @@ plugins=(git)
 
 # User configuration
 
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/darckjack/.rbenv/bin:/home/darckjack/.rbenv/plugins/ruby-build/bin:/usr/local/heroku/bin"
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/usr/local/heroku/bin:$HOME/.rbenv/bin:$HOME/.rbenv/plugins/ruby-build/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -76,7 +76,7 @@ fi
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
- alias zshconfig="subl3 ~/.zshrc"
+ alias zshconfig="vim $HOME/.zshrc"
  alias rake="noglob rake"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
