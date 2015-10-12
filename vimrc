@@ -32,10 +32,6 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
 " syntax checker/linter
 Plugin 'scrooloose/syntastic'
-" vim-airline
-Plugin 'bling/vim-airline'
-"" tmuxline
-Plugin 'edkolev/tmuxline.vim' 
 
 " all the plugins must be added before the following line
 call vundle#end()               " required
@@ -43,7 +39,11 @@ filetype plugin indent on       " load file type plugins + indentation
 
 "" leader to comma
 let mapleader="\<Space>"
- 
+
+" Project specific configuration
+set exrc
+set secure
+
 "" Whitespace
 set nowrap                      " don't wrap lines
 set tabstop=2 shiftwidth=2      " a tab is two spaces (or set this to 4)
@@ -66,8 +66,11 @@ map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
 
 " Colorscheme
-colorscheme lucius 
-LuciusBlackLowContrast
+if $COLORTERM == 'gnome-terminal'
+  set t_Co=256
+endif
+set background=dark
+colorscheme lucius
 
 " Highlight certain column
 set colorcolumn=90
@@ -75,9 +78,6 @@ highlight ColorColumn ctermbg=darkgray
 
 " goodlooking line numbers
 set nu
-
-"" good icons on vim-airline
-let g:airline_powerline_fonts=1
 
 "" Some mapping
 nnoremap <Leader>o :CtrlP<CR>
